@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client';
 import { GET_CHARACTERS_BY_ID } from '../../graphQL/queries';
-// import { IdContext } from '../../context/IdContext';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -13,7 +12,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 const CharacterDetail = () => {
 
     const { id } = useParams();
-    const characterId = parseInt(id, 10); // Convierte el id a un número
+    const characterId = parseInt(id, 10); 
 
 
     console.log('selectedCharacterId en CharacterDetail:', id);

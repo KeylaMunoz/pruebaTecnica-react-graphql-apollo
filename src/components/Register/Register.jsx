@@ -14,7 +14,6 @@ const Register = () => {
 
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    console.log(users);
 
     const userExists = users.some((user) => user.email === email);
     if (userExists) {

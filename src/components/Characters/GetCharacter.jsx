@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-// import { IdContext } from '../../context/IdContext'; // Corregido
 import Grid from '@mui/material/Grid2'
 import Stack from '@mui/material/Stack';
-import { CardActionArea, Pagination, Card, CardMedia, CardContent } from '@mui/material';
+import { Box, Pagination, Card, CardMedia, CardContent } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -41,7 +40,7 @@ const GetCharacter = ({characters, setPage, page, totalPages, }) => {
                 {characters.map( (character) => (
                     <Grid item xs={12} sm={6} md={4} key={character.id}>
                         <Card  sx={{ maxWidth: 200 }}>
-                        <CardActionArea>
+                            <Box sx={{cursor: 'pointer', '&:hover': {opacity: 0.9, backgroundColor: '#f5f5f5',}, }} >
                             <Link to={`/character/${character.id}`} style={{ textDecoration: "none", color: "inherit" }}>
                                 <CardMedia component="img" width="200" image= {character.image} alt= {character.name}/>
                                 <CardContent >
@@ -60,7 +59,7 @@ const GetCharacter = ({characters, setPage, page, totalPages, }) => {
                                 <IconButton aria-label="add to favorites" sx={{mt: -4, ml: 20 }} onClick={() => toggleFavorite(character)} >
                                     <FavoriteIcon  sx={{ position: "flex", color: favorites.some(fav => fav.id === character.id) ? "red" : "gray" }} />
                                 </IconButton>
-                                </CardActionArea>
+                            </Box>
                         </Card>
                     </Grid>
                 ))}

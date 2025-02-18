@@ -14,8 +14,6 @@ const Login = ({onLogin}) => {
 
     const users = JSON.parse(localStorage.getItem('users')) || []
 
-    console.log("Usuarios guardados en LS:", users); // Depuración
-
     const user = users.find (u => u.email === email && u.password === password)
  
     if (user) {
