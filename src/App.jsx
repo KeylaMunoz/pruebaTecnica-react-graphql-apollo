@@ -7,7 +7,6 @@ import NavBar from './components/NavBar/NavBar';
 import Favorite from './components/Favorite/Favorite';
 import CharacterDetail from './components/CharacterDetail/CharacterDetail';
 import { FilterProvider} from './context/FilterContext';
-import { IdProvider } from './context/IdContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
  const Protected = ({ children }) => (
@@ -42,8 +41,6 @@ function App() {
   return (
     <BrowserRouter>
 
-    <IdProvider>
-
        <Routes>
           
           <Route path="/" element={<Register />} />
@@ -57,8 +54,6 @@ function App() {
           <Route path='/character/:id' element= { <Protected > <CharacterDetail /> </ Protected >  } />
 
         </Routes>
-
-    </IdProvider>
 
     </BrowserRouter>
   );
